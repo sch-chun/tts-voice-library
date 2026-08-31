@@ -13,6 +13,17 @@ export default function VoiceTable({ tab, data, onToast }) {
   const [playingID, setPlayingID] = useState(null);
   const audioRef = useRef(new Audio());
 
+  const [volume, setVolume] = useState(() => {
+    const saved = localStorage.getItem('tts-volume');
+    return saved ? parseFloat(saved) : 0.8;
+  });
+
+  // 同步音量到 audio 元素，并持久化
+  useEffect(() => {
+    audioRef.current.volume = volume;
+    localStorage.setItem('tts-volume', String(volume));
+  }, [volume]);
+
   useEffect(() => {
     setFiltered(data);
   }, [data]);
@@ -37,7 +48,7 @@ export default function VoiceTable({ tab, data, onToast }) {
     audio.load();
     audio.play().then(() => {
       setPlayingID(rowID);
-      onToast(`🎵 播放: ${filename || '音色'}`, 'music');
+      onToast(`播放: ${filename || '音色'}`, 'music');
     }).catch(() => {
       onToast('⚠️ 无法播放，检查路径', 'exclamation-triangle');
       setPlayingID(null);
@@ -96,6 +107,40 @@ export default function VoiceTable({ tab, data, onToast }) {
         sortOrder={sortOrder}
         onToast={onToast}
       />
+
+      {/* ---------- 音量控制条 ---------- */}
+      <div className="volume-control-bar" style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        padding: '0.3rem 1rem',
+        background: 'var(--bg-filter)',
+        borderBottom: '1px solid var(--border-filter)',
+        gap: '0.8rem'
+      }}>
+        <span style={{ fontSize: '0.8rem', color: 'var(--label-color)' }}>
+          <i className="fas fa-volume-up"></i>
+        </span>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={Math.round(volume * 100)}
+          onChange={e => setVolume(e.target.value / 100)}
+          style={{
+            width: '120px',
+            height: '4px',
+            cursor: 'pointer',
+            accentColor: '#4a7cf7',
+            background: 'var(--input-border)',
+            borderRadius: '2px',
+          }}
+        />
+        <span style={{ fontSize: '0.8rem', color: 'var(--label-color)', minWidth: '40px' }}>
+          {Math.round(volume * 100)}%
+        </span>
+      </div>
+      {/* ----------------------------------- */}
 
       <div
         ref={tableContainerRef}
@@ -158,7 +203,7 @@ export default function VoiceTable({ tab, data, onToast }) {
                   if (navigator.clipboard?.writeText) {
                     navigator.clipboard.writeText(voiceId)
                       .then(() => {
-                        onToast(`✅ 已复制: ${voiceId}`, 'check-circle');
+                        onToast(`已复制: ${voiceId}`, 'check-circle');
                         const orig = btn.innerHTML;
                         btn.innerHTML = '<i class="fas fa-check"></i>';
                         setTimeout(() => btn.innerHTML = orig, 1200);
