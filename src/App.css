@@ -1,0 +1,261 @@
+/* src/App.css */
+:root {
+  --bg-body: #f5f7fb;
+  --text-body: #1e2a4a;
+  --bg-header: linear-gradient(135deg, #1e2a4a 0%, #2c3e6b 100%);
+  --border-header: #4a7cf7;
+  --bg-filter: #fff;
+  --border-filter: #e9edf4;
+  --label-color: #4a5e7a;
+  --input-bg: #fff;
+  --input-border: #dce2ec;
+  --input-text: #1e2a4a;
+  --input-placeholder: #a0b0c0;
+  --multi-bg: #fafcff;
+  --multi-border: #e9edf4;
+  --multi-label: #2c3e6b;
+  --exclude-bg: #fde8e8;
+  --exclude-border: #e74c3c;
+  --btn-exclude-bg: #e9ecef;
+  --btn-exclude-text: #2c3e6b;
+  --btn-exclude-border: #ced4da;
+  --btn-exclude-active-bg: #e74c3c;
+  --btn-exclude-active-text: #fff;
+  --btn-reset-bg: #f8f9fa;
+  --btn-reset-text: #6c757d;
+  --btn-reset-border: #ced4da;
+  --btn-reset-hover: #e2e6ea;
+  --table-wrap-bg: #fff;
+  --table-wrap-border: #e9edf4;
+  --table-header-bg: #f8faff;
+  --table-header-text: #1e2a4a;
+  --table-header-border: #e2e8f0;
+  --table-cell-border: #f0f2f7;
+  --table-cell-text: #1e2a4a;
+  --table-row-hover: #f5f9ff;
+  --table-row-playing: #e3edff;
+  --voice-name: #1a2744;
+  --tag-bg: #eef3fc;
+  --tag-text: #2c3e6b;
+  --tag-gender-m-bg: #dbeafe;
+  --tag-gender-m-text: #1a4b8c;
+  --tag-gender-f-bg: #fce4ec;
+  --tag-gender-f-text: #a1354a;
+  --tag-lang-en-bg: #e6f7e6;
+  --tag-lang-en-text: #1a6b3a;
+  --stats-bg: #f8faff;
+  --stats-border: #e9edf4;
+  --stats-text: #4a5e7a;
+  --stats-strong: #1e2a4a;
+  --scrollbar-thumb: #c8d2e0;
+  --scrollbar-track: #f0f2f7;
+  --btn-icon-bg: #eef3fc;
+  --btn-icon-text: #2c3e6b;
+  --btn-icon-hover-bg: #4a7cf7;
+  --btn-icon-hover-text: #fff;
+  --btn-icon-playing: #4a7cf7;
+  --exclude-cell-bg: #f8d7da;
+  --exclude-cell-text: #721c24;
+  --exclude-cell-hover: #f5c6cb;
+  --empty-color: #8899b4;
+  --toast-bg: #1e2a3a;
+  --toast-text: #e9edf4;
+  --toast-border: #3a5068;
+  --text-muted: #6c757d;
+  --border-top: #e9edf4;
+}
+
+[data-theme="dark"] {
+  --bg-body: #121826;
+  --text-body: #e9edf4;
+  --bg-header: linear-gradient(135deg, #0b111f 0%, #1a2744 100%);
+  --border-header: #3a6bd5;
+  --bg-filter: #1e2a3a;
+  --border-filter: #2a3a4e;
+  --label-color: #b0c4de;
+  --input-bg: #2a3a4e;
+  --input-border: #3a5068;
+  --input-text: #e9edf4;
+  --input-placeholder: #c8d6e5;
+  --multi-bg: #1e2a3a;
+  --multi-border: #3a5068;
+  --multi-label: #c8d6e5;
+  --exclude-bg: #2d1e1e;
+  --exclude-border: #c0392b;
+  --btn-exclude-bg: #2a3a4e;
+  --btn-exclude-text: #b0c4de;
+  --btn-exclude-border: #3a5068;
+  --btn-exclude-active-bg: #c0392b;
+  --btn-exclude-active-text: #fff;
+  --btn-reset-bg: #2a3a4e;
+  --btn-reset-text: #b0c4de;
+  --btn-reset-border: #3a5068;
+  --btn-reset-hover: #3a5068;
+  --table-wrap-bg: #1a2436;
+  --table-wrap-border: #2a3a4e;
+  --table-header-bg: #0f1a2a;
+  --table-header-text: #b0c4de;
+  --table-header-border: #2a3a4e;
+  --table-cell-border: #2a3a4e;
+  --table-cell-text: #d0dcec;
+  --table-row-hover: #253040;
+  --table-row-playing: #1a3a6a;
+  --voice-name: #e9edf4;
+  --tag-bg: #2a3a4e;
+  --tag-text: #c8d6e5;
+  --tag-gender-m-bg: #1a3a5a;
+  --tag-gender-m-text: #7aa9ff;
+  --tag-gender-f-bg: #4a1a2a;
+  --tag-gender-f-text: #f28b9c;
+  --tag-lang-en-bg: #1a3a2a;
+  --tag-lang-en-text: #6fcf97;
+  --stats-bg: #0f1a2a;
+  --stats-border: #2a3a4e;
+  --stats-text: #b0c4de;
+  --stats-strong: #e9edf4;
+  --scrollbar-thumb: #3a5068;
+  --scrollbar-track: #1a2436;
+  --btn-icon-bg: #2a3a4e;
+  --btn-icon-text: #b0c4de;
+  --btn-icon-hover-bg: #4a7cf7;
+  --btn-icon-hover-text: #fff;
+  --btn-icon-playing: #4a7cf7;
+  --exclude-cell-bg: #6d3a3a;
+  --exclude-cell-text: #f5c6cb;
+  --exclude-cell-hover: #8a4a4a;
+  --empty-color: #8899b4;
+  --toast-bg: #1e2a3a;
+  --toast-text: #e9edf4;
+  --toast-border: #3a5068;
+  --text-muted: #aab8c9;
+  --border-top: #2a3a4e;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg-body);
+  color: var(--text-body);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* 滚动条 */
+.table-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+.table-scroll::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 8px; }
+.table-scroll::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+
+/* 通用组件样式复用原项目风格，但用CSS Module风格简单写 */
+.btn-icon {
+  width: 30px; height: 30px; border-radius: 50%; border: none;
+  background: var(--btn-icon-bg); color: var(--btn-icon-text);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; transition: all 0.2s; cursor: pointer;
+}
+.btn-icon:hover { background: var(--btn-icon-hover-bg); color: var(--btn-icon-hover-text); transform: scale(1.05); }
+.btn-icon.playing { background: var(--btn-icon-playing); color: #fff; animation: pulse 1s infinite; }
+.btn-icon.copy-btn:hover { background: #28a745; color: #fff; }
+
+/* 多选筛选组件样式 */
+.multi-filter-wrapper {
+  background: var(--multi-bg);
+  border: 1px solid var(--multi-border);
+  border-radius: 8px;
+  padding: 0.2rem 0.4rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+.multi-filter-wrapper.exclude-mode {
+  background: var(--exclude-bg);
+  border-color: var(--exclude-border);
+}
+
+.voice-tag {
+  display: inline-block; background: var(--tag-bg); color: var(--tag-text);
+  border-radius: 12px; padding: 0.1rem 0.7rem; font-size: 0.75rem; font-weight: 500;
+  white-space: nowrap; transition: background 0.2s, color 0.2s;
+}
+.voice-tag.gender-m { background: var(--tag-gender-m-bg); color: var(--tag-gender-m-text); }
+.voice-tag.gender-f { background: var(--tag-gender-f-bg); color: var(--tag-gender-f-text); }
+.voice-tag.lang-en { background: var(--tag-lang-en-bg); color: var(--tag-lang-en-text); }
+
+.voice-name { font-weight: 600; color: var(--voice-name); transition: color 0.2s; }
+
+/* 输入框占位文字颜色 */
+.form-control::placeholder,
+.form-control-sm::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1; /* 避免 Firefox 等浏览器降低透明度 */
+}
+
+.btn-exclude-cell {
+  width: 20px; height: 20px; border-radius: 50%; border: none;
+  background: var(--exclude-cell-bg); color: var(--exclude-cell-text);
+  font-size: 0.7rem; font-weight: bold; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: 0.15s; flex-shrink: 0;
+}
+.btn-exclude-cell:hover { transform: scale(1.15); background: var(--exclude-cell-hover); }
+
+.cell-content { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
+.text-muted { color: var(--text-muted) !important; }
+.border-top { border-top-color: var(--border-top) !important; }
+
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(74,124,247,0.4); } 50% { box-shadow: 0 0 0 8px rgba(74,124,247,0); } }
+
+/* Toast 简单实现 (不用Bootstrap的JS) */
+.toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
+.toast {
+  background: var(--toast-bg); color: var(--toast-text);
+  border: 1px solid var(--toast-border); border-radius: 12px;
+  padding: 0.8rem 1.2rem; min-width: 200px; box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: opacity 0.3s, transform 0.3s; opacity: 0; transform: translateY(20px);
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.toast i { margin-right: 8px; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .filter-row { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+  .multi-filter-wrapper { flex-direction: column; align-items: stretch; }
+  .multi-filter-group { max-height: 50px; }
+  .app-header h1 { font-size: 1.3rem; }
+  .table-wrap .table { font-size: 0.78rem; }
+}
+/* 选项卡样式 */
+.nav-tabs .nav-link {
+  font-weight: 600;
+  color: var(--text-body);
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 0.7rem 1.8rem;
+  transition: all 0.2s;
+  border-radius: 0;
+}
+.nav-tabs .nav-link:hover {
+  border-bottom-color: #a0b8e0;
+  color: var(--text-body);
+}
+.nav-tabs .nav-link.active {
+  color: var(--text-body);
+  border-bottom-color: #4a7cf7;
+  background: transparent;
+}
+.nav-tabs .nav-link i {
+  margin-right: 8px;
+}
+.tab-badge {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-tabs .nav-link.active .tab-badge {
+  background: #4a7cf7;
+  color: #fff;
+}
